@@ -1,3 +1,12 @@
+/* Importing Google fonts */
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:100,300,400,500,700,900");
+
+/* Importing component files from css/components/ */
+@import url("components/box.css");
+@import url("components/button.css");
+@import url("components/image.css");
+@import url("components/list.css");
+
 /*** Design by CSS Basics ***/
 
 body {
@@ -73,63 +82,10 @@ a:hover {
     }
   }
 
-.box-main {
-    background-color:white;
-    padding: 40px;
-    margin:20px 0px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* horizontal-shift vertical-shift blur color */
-    border-radius:4px;
-    text-align:center;
-}
-.box-foot {
-    margin:20px 0px;
-    border-radius:4px;
-    text-align:center;
-}
-  
-.img-circle {
-    border-radius: 50%;
-}
-.img-size {
-    width:120px;
-    height:120px;
-}
-#banner { /* id="banner" */
-    background-image: url("images/background.jpg");
-}
-
 .text-justify { /* class="text-justify" */
     text-align: justify;
 }
   
-.btn-main {
-    background-color:#d84619;
-    background-color:#1f8f10;
-    color:white;
-    padding:15px 20px;
-    border-radius:4px;
-}
-.btn-main:hover {
-    background-color:rgb(64, 64, 64);
-    color:white;
-}
-  
-.list-inline {
-    list-style: none;
-    padding-left: 0px;
-}
-.list-inline li {
-    display:inline;
-    padding:10px;
-}
-.list-inline i {
-    font-size:50px;
-    color:rgb(230, 230, 230);
-}
-.list-inline i:hover {
-    color:rgb(64, 64, 64);
-}
-
 /* Design adjustments using id */
 
 #special { /* id="special" */
