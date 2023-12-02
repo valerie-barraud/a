@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:100,300,400,500,700,900");
 
 /* Importing component files from css/components/ */
+@import url("components/banner.css");
 @import url("components/box.css");
 @import url("components/button.css");
 @import url("components/image.css");
