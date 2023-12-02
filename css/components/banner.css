@@ -1,9 +1,10 @@
 .banner {
-    background-image: url(../../images/background.jpg);   
-    background-size: cover;  /* the background-image covers the <div class="banner"> */
+    _background-image: url(../../images/background.jpg);
+    background-image:   linear-gradient(-225deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%), 
+                        url('../../images/background.avif');
+    background-size: cover;  /* avoid to repeat the image many times */
     background-position: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding: 50px 0px;
   }
 .banner h1 {
     color: white;
@@ -13,19 +14,20 @@
     color: white;
     font-size: 30px;
     font-weight: lighter;
+    margin-bottom: 50px;
     opacity: 0.8;
 }
 
-/* Put some padding top/bottom of 150 pixels on your banner.
-  
-  Linear-gradient filters
-  We often use a transparent linear gradient on top of an image to make texts more readable. 
-  A linear gradient is defined this way: linear-gradient(angle, start_color start_point, end_color end_point)
+/* Linear-gradient filters
+   Use a transparent black linear gradient on top of an image to make white texts more readable 
+   Parameters of a linear gradient: linear-gradient(angle, start_color start_point, end_color end_point)
 */
 
-.banner {
-    background-image: linear-gradient(-225deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%), url('images/background.jpg');
+.banner23 {
+    background-image:   linear-gradient(-225deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%), 
+                        url('../../images/background.avif');
 }
 .banner-flat-filter {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/background.jpg');
+    background-image:   linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('../../images/background.jpg');
 }
