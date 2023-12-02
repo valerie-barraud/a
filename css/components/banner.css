@@ -2,6 +2,8 @@
     background-image: url(../../images/background.jpg);   
     background-size: cover;  /* the background-image covers the <div class="banner"> */
     background-position: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 .banner h1 {
     color: white;
