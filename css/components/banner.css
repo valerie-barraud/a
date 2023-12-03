@@ -14,9 +14,18 @@
     font-size: 30px;
     font-weight: lighter;
     margin-bottom: 50px;
-    padding: 0px; /*ADDED*/
     opacity: 0.8;
 }
+/* @media must be after the classes it changes */
+@media (max-width:540px) {
+    .banner {
+        background-image: url(../../images/background.jpg);
+    }
+    .banner h1{ 
+        font-size: 40px;
+        font-weight: 700;
+    }
+  }
 
 /* Linear-gradient filters
    Use a transparent black linear gradient on top of an image to make white texts more readable 
