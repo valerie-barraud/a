@@ -5,13 +5,14 @@
 @import url("components/banner.css");
 @import url("components/box.css");
 @import url("components/button.css");
+@import url("components/flexbox.css");
 @import url("components/image.css");
 @import url("components/list.css");
 
 /*** Design by CSS Basics ***/
 
 body {
-    background-image: url(images/background.jpg); 
+    /*background-image: url(../images/background.jpg); */
     background-color: #f7f9fc;
     color: rgb(64, 64, 64); /* Text color */
     /*font-family: Arial, sans-serif; *//*Courier, monospace; *//*Times, serif; *//*Helvetica;*/
@@ -23,10 +24,6 @@ body {
     font-weight: lighter;
 	/*line-height: 1.0;	letter-spacing: 1px; */
     margin: 0px;
-/*    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px; */
   }
 
 h1,h2,h3 {
@@ -51,19 +48,19 @@ h3 {
 }
 
 a {
+    color: orange;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: orange;
     text-decoration: none;
     transition: color 0.2s ease;
-}
-a:hover {
+  }
+  a:hover {
     color: orangered;
 }
 
 #introduction p { /* <p class="" id="introduction"> */
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 /*** Design by CSS Classes ***/
