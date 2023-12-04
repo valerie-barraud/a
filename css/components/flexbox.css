@@ -1,0 +1,31 @@
+/*** Flexbox CSS properties ***/
+/** This is the container of several elements **/
+.flexbox-grid {
+  display: flex;
+  flex-wrap: wrap;    /* The too big element goes to the new line */
+}
+/** This is an element **/
+.flexbox {
+    padding: 20px;
+    background-color: white;
+    display: flex;      /* This is a flexible element */
+    flex-basis: 250px;  /* The min with of this flexible element */
+    flex-grow: 1;       /* The element takes all the available width */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* horizontal-shift vertical-shift blur color */
+    border-radius: 5px;
+    margin: 10px;
+  }
+  .flexbox img {
+    width: 150px;
+    border-radius: 5px;
+  }
+  .flexbox h3 {
+    color: rgb(64, 64, 64);
+    padding-left: 20px;
+    _flex-grow: 1;      /* Take all the available width */
+    _flex-basis: 250px; /* min size of this flexible element */
+    font-size: 24px;
+    margin: 10px;
+}
