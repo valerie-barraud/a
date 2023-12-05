@@ -1,20 +1,42 @@
-form.form-item {
-    display:table;
-  }
-  
-  div.form-item {
-    display: table-row;
-  }
-  
-  label,
-  input {
-    display: table-cell;
+form.form-grid {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: column; /* Affichage vertical */
+    align-items: stretch;
+    row-gap: 0px;
+    flex-wrap: wrap;   /* The too big element goes to the new line */
+    align-content: center; /* center the wrapped lines|columns */
+}
+
+div.form-item {
+    display: flex;      /* This is a flexible element */
+    _flex-basis: 100px;  /* The min with of this flexible element */
+    flex-grow: 1;       /* Each element takes all the available width */
+    _align-items: flex-start;
+    justify-content: space-between;
+}
+#touch_down {
+    margin-bottom: 0px;
+}
+
+div.form-item:nth-last-child() {
+    margin: auto;
+    _width: 100px;
+    _height: 400px;
+    align-self: center;
+    flex-grow: 1;       /* Each element takes all the available width */
+}
+
+label,
+input {
+    padding: 0px;
+    display: flex;  
     margin-bottom: 10px;
     border-color: none;
     lighting-color: none;
-  }
-  
-  label {
-    padding-right: 10px;
+    margin: 10px 0px;
 }
-
+label {
+    padding-right: 10px;
+    _width: 200px;
+}
