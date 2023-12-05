@@ -67,7 +67,7 @@ a {
 
 .container {
     width:900px; /*700px*/
-    margin:20px auto;
+    margin:20px auto; /*40px*/
   }
   @media (max-width:960px) {
     .container {
