@@ -1,14 +1,13 @@
 .box-main {
+    padding: 30px;
     background-color:white;
-    padding: 40px;
-    margin:20px 0px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* horizontal-shift vertical-shift blur color */
     border-radius:4px;
     text-align:center;
+    margin:20px 0px;
 }
 .box-foot {
-    margin:20px 0px;
     border-radius:4px;
     text-align:center;
+    margin:20px 0px;
 }
-  
