@@ -1,20 +1,21 @@
 .banner {
+    color: white;
+    padding: 50px 0px 10px 0px;
     background-image:   linear-gradient(-225deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%), 
                         url('../../images/background.avif');
     background-size: cover;  /* avoid to repeat the image many times */
     background-position: center;
-    padding: 50px 0px;
-}
-.banner h1 {
+  }
+  .banner h1 {
     color: white;
     font-size: 50px;
-}
-.banner h2 {
+  }
+  .banner h2 {
     color: white;
     font-size: 30px;
     font-weight: lighter;
-    margin-bottom: 50px;
     opacity: 0.8;
+    margin-bottom: 50px;
 }
 /* @media must be after the classes it changes */
 @media (max-width:540px) {
