@@ -27,24 +27,30 @@
     <div class="container">
 	    <div class="box-main" id="with_heading"><h2>Sign up</h2>
         <img src="images/apply.jpg" alt="Apply" class="img-circle img-size" _id="special">
-        <p class="text-justify">
+        <!--p class="text-justify">
           Complete this <em>Account Application</em> form, send us the requested documents. 
           <br>Then receive an email to Validate the request or Activate the account. 
-        </p>
+        </p-->
         <h3>Account Application</h3>
 
-          <form action="https://valerie-barraud.github.io/a/apply.php" method="post" class="form-item">
+          <form action="https://valerie-barraud.github.io/a/apply.php" method="post" class="form-grid">
 
               <div class="form-item">
-                  <label for="name"> Name </label>    <input type="text" name="name" id="name" required autofocus />
+                  <label for="name" id="touch_down">Nom</label>
+              </div>
+              <div class="form-item">
+                  <input type="text" name="name" id="name" placeholder="Enter your Name" required autofocus />
               </div>
 
               <div class="form-item">
-                  <label for="email"> email </label>  <input type="email" name="email" id="email" required />
+                  <label for="email" id="touch_down">Login</label>
+              </div>
+              <div class="form-item">
+                  <input type="email" name="email" id="email" placeholder="Entre your Email" required />
               </div>
 
               <div class="form-item" _hidden>
-                                            <input type="submit" value="Request a free Account" class="btn-main btn-form" />
+                  <input type="submit" value="Request a free Account" class="btn-main btn-form" id="touch_down" />
               </div>
 
           </form>
