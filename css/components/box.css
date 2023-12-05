@@ -1,5 +1,5 @@
 .box-main {
-    padding: 40px; /* statrs by a section heading <h2>*/
+    padding: 20px; /* stars by a section heading <h2>*/
     background-color:white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* horizontal-shift vertical-shift blur color */
     border-radius:4px;
@@ -13,7 +13,7 @@
 }
 
 #with_heading {
-    padding-top: 10px; /* without section heading, more padding */
+    padding-top: 10px; /* more padding without section heading */
 }
 #with_heading h2 {
     margin-top: 10px;
