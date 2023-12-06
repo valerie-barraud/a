@@ -1,42 +1,44 @@
-form.form-grid {
+/***form.css 
+    The form.form-container contains at least one div.form-item 
+    see the last-child div.form-item 
+***/
+  /** CONTAINER **/
+form.form-container {
     display: inline-flex;
-    justify-content: space-between;
     flex-direction: column; /* Affichage vertical */
+    justify-content: space-between;
     align-items: stretch;
     row-gap: 0px;
-    flex-wrap: wrap;   /* The too big element goes to the new line */
-    align-content: center; /* center the wrapped lines|columns */
+    flex-wrap: wrap;        /* The too big element goes to the new line */
+    align-content: center;  /* center the wrapped lines|columns */
 }
+    /*@media screen and (max-width: 1500px) {*/
+  /*@media (max-width: 1500px) {
+    form.form-container { 
+        flex-direction:column; 
+    }      
+}*/
 
+  /** ITEM **/
 div.form-item {
-    display: flex;      /* This is a flexible element */
-    _flex-basis: 100px;  /* The min with of this flexible element */
-    flex-grow: 1;       /* Each element takes all the available width */
-    _align-items: flex-start;
+    display: flex;
+    flex: 1 0 100%;     /* flex: rassemble flex-grow flex-shrink flex-basis */
     justify-content: space-between;
 }
-#touch_down {
-    margin-bottom: 0px;
+/** LAST ITEM 
+    The last child of the form is the submit button **/
+div.form-item:last-child {  /* The last-child inherits the standard div.form-item */
+    _visibility: hidden;        /* TEST - Hide the last form-item */
+    justify-content: center;    /* The button is centered */
 }
-
-div.form-item:nth-last-child() {
-    margin: auto;
-    _width: 100px;
-    _height: 400px;
-    align-self: center;
-    flex-grow: 1;       /* Each element takes all the available width */
-}
-
-label,
-input {
-    padding: 0px;
-    display: flex;  
-    margin-bottom: 10px;
-    border-color: none;
-    lighting-color: none;
+/** FORM LABEL AND INPUT **/
+label,input {
     margin: 10px 0px;
 }
 label {
     padding-right: 10px;
     _width: 200px;
+}
+#touch_down {
+    margin-bottom: 0px;
 }
