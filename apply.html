@@ -1,8 +1,11 @@
-<html>
+<!DOCTYPE html>
   <head>
     <title>LF Apply /a/</title>
     <meta name="description" content="The best way to exchange with your Dear Friends.">
     <meta charset="utf-8">
+    
+    <!-- cf. @media query utilisée dans form.css pour changer flex-direction -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- FontAwesome (fa-) script qui transforme les logos en fonts (cf. list-inline)--> 
     <script src="https://kit.fontawesome.com/3bbaf5ea91.js" crossorigin="anonymous"></script>
@@ -33,30 +36,54 @@
         </p-->
         <h3>Account Application</h3>
 
-          <form action="https://valerie-barraud.github.io/a/apply.php" method="post" class="form-grid">
+        <form action="https://valerie-barraud.github.io/a/apply.php" method="post" class="form-container">
 
-              <div class="form-item">
-                  <label for="name" id="touch_down">Nom</label>
-              </div>
-              <div class="form-item">
-                  <input type="text" name="name" id="name" placeholder="Enter your Name" required autofocus />
-              </div>
-
-              <div class="form-item">
-                  <label for="email" id="touch_down">Login</label>
+            <div class="form-item">
+                <label for="name" id="touch_down">Nom</label>
               </div>
               <div class="form-item">
-                  <input type="email" name="email" id="email" placeholder="Entre your Email" required />
-              </div>
+                <input type="text" name="name" id="name" placeholder="Enter your Name" required autofocus />
+            </div>
 
-              <div class="form-item" _hidden>
-                  <input type="submit" value="Request a free Account" class="btn-main btn-form" id="touch_down" />
-              </div>
+            <div class="form-item">
+                <label for="email" id="touch_down">Login</label>
+            </div>
+            <div class="form-item">
+                <input type="email" name="email" id="email" placeholder="Entre your Email" required />
+            </div>
 
-          </form>
+            <div class="form-item" _hidden>
+                <input type="submit" value="Apply" class="btn-main btn-form" id="touch_down" />
+            </div>
+
+        </form>
 
       </div>
     </div>
+
+    <form action="https://valerie-barraud.github.io/a/apply.php" method="post"  class="flexbox-grid">
+
+        <div class="flexbox" >
+          <div class="form-item">
+            <label for="name" id="touch_down">Nom</label>
+            <input type="text" name="name" id="name" placeholder="Enter your Name" required autofocus />
+          </div>
+        </div>
+
+        <div class="flexbox" >
+          <div class="form-item">
+            <label for="email" id="touch_down">Login</label>
+            <input type="email" name="email" id="email" placeholder="Entre your Email" required />
+          </div>
+        </div>
+
+        <div class="flexbox" _hidden>
+          <div class="form-item">
+            <input type="submit" value="Apply" class="btn-main btn-form" id="touch_down" />
+          </div>
+        </div>
+
+    </form>
 
     <div class="flexbox-grid">
       <div class="flexbox">
