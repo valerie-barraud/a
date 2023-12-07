@@ -9,7 +9,7 @@
     padding: 20px;
     background-color: white;
     display: flex;      /* This is a flexible element */
-    flex-basis: 250px;  /* The min with of this flexible element */
+    flex-basis: 200px;  /* 250px; The min with of this flexible element */
     flex-grow: 1;       /* The element takes all the available width */
     align-items: center;
     justify-content: space-between;
