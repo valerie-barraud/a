@@ -29,7 +29,7 @@
 
     <div class="container">
 	    <div class="box-main" id="with_heading"><h2>Sign up</h2>
-        <img src="images/apply.jpg" alt="Apply" class="img-circle img-size" _id="special">
+        <img src="images/apply.jpg" alt="Apply" class="img-circle img-size">
         <!--p class="text-justify">
           Complete this <em>Account Application</em> form, send us the requested documents. 
           <br>Then receive an email to Validate the request or Activate the account. 
@@ -86,14 +86,13 @@
     </form>
 
     <div class="flexbox-grid">
-      <div class="flexbox map-item">
-        <iframe class="flex_grow"
+      <div class="flexbox map-item"> <!-- class="can-flex-grow" is added to allow the grow of an <iframe ...> map --> 
+        <iframe    _style="flex-grow: 1;" class="can-flex-grow" 
           id="inlineFrameMap"
           title="Inline Frame Map"
           width ="700"
           height="300"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
-          _style="flex-grow: 1;">
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
         </iframe>
       </div>
     </div>
