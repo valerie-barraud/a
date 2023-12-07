@@ -95,7 +95,7 @@ a {
 div.map-item {
     max-width: 1300px;
     max-height:300px;
-    visibility: inherit;
+    flex-grow: 1;
   }
   @media (max-width:1260px) {
     div.map-item {
