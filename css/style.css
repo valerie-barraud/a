@@ -90,7 +90,34 @@ a {
 .text-justify { /* class="text-justify" */
     text-align: justify;
 }
-  
+
+ /* map display */
+div.map-item {
+    max-width: 1300px;
+    max-height:300px;
+    visibility: inherit;
+  }
+  @media (max-width:1260px) {
+    div.map-item {
+      width:1000px;
+    }
+  }
+  @media (max-width:960px) {
+    div.map-item {
+      width:650px;
+    }
+  }
+  @media (max-width:720px) {
+    div.map-item {
+      width:450px;
+    }
+  }
+  @media (max-width:540px) {
+    div.map-item {
+      width:300px;
+    }
+}
+
 /* Design adjustments using id */
 
 #special { /* id="special" */
