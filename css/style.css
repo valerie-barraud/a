@@ -92,10 +92,13 @@ a {
 }
 
  /* map display */
+ iframe.flex_grow {
+  flex-grow: 1;
+ }
+
 div.map-item {
     max-width: 1300px;
     max-height:300px;
-    flex-grow: 1;
   }
   @media (max-width:1260px) {
     div.map-item {
