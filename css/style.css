@@ -84,8 +84,9 @@ label input {
 }
 
 /** Oeil Eye icon to show/hide password **/
-/* LABEL <label class="password-icon"> - ADDED */
+/* LABEL <label class="password-icon"> - BLOC ADDED */
 label.password-icon { 
+  margin: 0px;
   display: inline-flex;
   padding: 0px;
 }
@@ -117,7 +118,7 @@ label .password-icon {
 input {
     font-size:1em;
     color:white; /*#f9f9f9;*/
-    background: rgba(16,16,16,0.4);/*transparent;*/
+    background: rgba(16,16,16,0.5);/*transparent;*/
     padding: 1rem 1rem;
     _width: 200px;
     border-radius: 7px;
