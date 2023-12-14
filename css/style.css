@@ -65,9 +65,9 @@ a {
 
 /** For the input type="password" and its Eye Oeil **/
     /* former password.css - BEGIN */
-/* Le <input type="password"> est dans un <label>...</label> */
+/* Le <input type="password"> est dans un <label>...</label> */ 
 label {
-    position: relative;
+    position: relative; /* to its normal position / top,bottom right,left */
 }
 label input {
     _font-size: 1em;
@@ -84,12 +84,13 @@ label input {
 }
 
 /** Oeil Eye icon to show/hide password **/
-/* LABEL <label class="password-icon"> */
+/* LABEL <label class="password-icon"> - ADDED */
 label.password-icon { 
+  display: inline-flex;
   padding: 0px;
 }
 /* The Oeil Eye icon to show/hide password is in <label><div class="password-icon"> Eye icon </div></label> */
-/* DESCENDANTS OF LABEL <label> ... <element class="password-icon"> */
+/* DESCENDANTS OF LABEL <label> ... <element class="password-icon"> - Here element is div */
 label .password-icon {
     _display: flex; display: inline-flex; 
     align-items: center;
@@ -101,7 +102,7 @@ label .password-icon {
     top: 22px; right: 22px;
 
     _transform: translateY(-50%);
-    width: 20px;
+    width: 20px; height: 20px;
     color: #f9f9f9;
     transition: all 0.2s;
   }
@@ -116,7 +117,7 @@ label .password-icon {
 input {
     font-size:1em;
     color:white; /*#f9f9f9;*/
-    background: rgba(16,16,16,0.5);/*transparent;*/
+    background: rgba(16,16,16,0.2);/*transparent;*/
     padding: 1rem 1rem;
     _width: 200px;
     border-radius: 7px;
