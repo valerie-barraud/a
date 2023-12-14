@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="fr">
   <head>
     <title>LF Apply /a/</title>
     <meta name="description" content="The best way to exchange with your Dear Friends.">
@@ -7,23 +8,183 @@
     <!-- cf. @media query utilisée dans form.css pour changer flex-direction -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FontAwesome (fa-) script qui transforme les logos en fonts (cf. list-inline)--> 
-    <script src="https://kit.fontawesome.com/3bbaf5ea91.js" crossorigin="anonymous"></script>
-
     <!-- Feuille de style du Projet importing components/<files> --> 
     <link rel="stylesheet" href="css/style.css">
 
-  </head>
-  <body>
+    <!-- FontAwesome (fa-) script qui transforme les logos en fonts (cf. list-inline)--> 
+    <script src="https://kit.fontawesome.com/3bbaf5ea91.js" crossorigin="anonymous"></script>
+
+    <script _src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+
+    
+    <script _src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script _src="https://malsup.github.io/jquery.form.js"></script> 
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script> 
+        var myGlobalResponse = ""
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            //$('#myForm').ajaxForm(function() { alert("Thank you for your comment!"); }); 
+            
+            //const element = document.querySelector("#btnLogIn"); //arg3: once=true,
+            document.querySelector("#btnLogIn").addEventListener("click", 
+                                                                function(){this.style.visibility="hidden";}, 
+                                                                false, );
+            document.querySelector("#btnSignUp").addEventListener("click", 
+                                                                function(){this.style.visibility="hidden";}, 
+                                                                false, );
+          //XMLHttpRequest() is old fashion, now use fetch() instead 
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "apply.php"); 
+          xhr.onload = function(event){ 	
+              alert("Success - The server responded with : \n" + event.target.response); 
+              myGlobalResponse = event.target.response;
+          };
+
+          // feather to see or not the password 
+          feather.replace();
+
+          const eyeOn  = document.querySelector(".feather-eye");
+          const eyeOff = document.querySelector(".feather-eye-off");
+          const pwdField = document.querySelector("input[type=password]");
+          eyeOn.addEventListener("mouseover", () => {     //"click", () => {
+            eyeOn.style.display  = "none"; eyeOff.style.display = "block"; pwdField.type = "text";
+          });
+          eyeOff.addEventListener("mouseleave", () => {   // "click", () => {
+            eyeOn.style.display  = "block"; eyeOff.style.display = "none"; pwdField.type = "password";
+          });
+
+        }); 
+
+        function _setVisible(selector_p) 
+        { // Check every 100 ms that the DOM of the document is completly loaded
+          let stateCheck = setInterval(() => {
+            if (document.readyState === 'complete') { // document ready
+              clearInterval(stateCheck);
+              const myNode = document.querySelector(selector_p); // "#id" or ie. "a" for the first anchor of the DOM
+              //myNode.textContent = ""; //Mozilla Developer Network";
+              //myNode.href = "index.html"; //https://developer.mozilla.org";
+              myNode.style.visibility = "visible";
+            }
+          }, 100);
+        }
+
+        function _setHidden(selector_p) { 
+          let stateCheck = setInterval(() => {
+            if (document.readyState === 'complete') { 
+              clearInterval(stateCheck);
+              document.querySelector(selector_p).style.visibility = "hidden";
+            }
+          }, 100);
+        }
+
+        function cbClickLogIn()
+        {
+          _setVisible("#btnSignUp");
+          _setHidden("#spnLogIn");
+        }
+
+        function cbClickSignUp()
+        {
+          _setVisible("#btnLogIn");
+          _setVisible("#spnLogIn");
+        }
+
+        function request0(formId_p,targetUrl_p) 
+        { 
+          /* create and send a request */
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "apply.php"); 
+          /* on success */
+          xhr.onload = function(event){ 	
+              alert("Success - The server responded with : \n" + event.target.response); 
+              //document.val = event.target.response;
+          };
+          /* on error, on abort */
+          var formData = new FormData(document.getElementById(formId_p));
+          xhr.send(formData);
+          alert("request0::end");
+        }
+
+        function requestA() {
+          const myNode = document.querySelector("a");
+          myNode.textContent = "Mozilla Developer Network";
+          myNode.href = "https://developer.mozilla.org";
+        }
+
+        function request() //formId_p,targetUrl_p) 
+        { 
+          const elt_name  = document.getElementById("nameR");
+          const elt_email = document.getElementById("emailR");
+          let inputValue  = elt_name.value;
+          elt_name.value  = elt_email.value;
+          elt_email.value = inputValue;
+          //const inputValue = input.value; alert(inputValue);
+          //console.log(inputValue);
+          //alert("request1::end");
+          //document.getElementById("user_profile_form") = myGlobalResponse;
+let fetchTheURL = fetch("index.html").then((res) => { alert(res); }); // then() pour attendre le res en asynchrone 
+let websiteData = fetch("index.html").then(res => res.text()).then((data) => { alert(data); }); // Now contains our website's HTML
+        }
+
+    </script> 
+
+    <script> 
+        function sendRequest()
+        {
+          $("#user_profile_form").submit(function(event) {
+            event.preventDefault();
+            var postData = {
+              name:  $('#name').val(),
+              email: $('#email').val()
+            }; 
+            alert("postData defined");
+            $.post("saveprofilechanges.php", 
+              postData,
+              function(data) { 
+                alert("function data "+data);
+                var json = jQuery.parseJSON(data);
+                if (json.ExceptionMessage != undefined) {
+                  alert(json.ExceptionMessage); // the exception from the server
+                  $('#' + json.Field).focus(); // focus the specific field to fill in
+                } else alert("json.ExceptionMessage");
+                if (json.SuccessMessage != undefined) {
+                  alert(json.SuccessMessage); // the success message from server
+                } else alert("json.SuccessMessage");
+            });
+          });
+        }
+    </script> 
+
+  </head> 
+  <body> 
 
     <div class="banner">
       <div class="container">
-        <h1>Little Family</h1>
+        <h1>Little FAMILY</h1>
           <h2>The best way to exchange with your Dear Friends</h2>
-            <a href="https://valerie-barraud.github.io/a/" target="_blank" class="btn-main"
+            <span id="spnLogIn"> 
+              <a _href="index.html" class="btn-main" id="btnLogIn" onclick="cbClickLogIn()" 
                 title="You already have an Account">Log in</a>
-
-              | Sign up <i class="fa-solid fa-turn-down"></i>
+              <input type="email" name="email" id="emailB" placeholder="Login by Email" _required /> 
+              <input type="text"  name="pwd"   id="pwdB"   placeholder="Password 1" _required /> 
+              <label>
+                <div class="password-icon"> 
+                  <i data-feather="eye"></i> 
+                  <i data-feather="eye-off"></i> 
+                </div>
+                <input type="password" placeholder="Password 2" />
+              </label>
+            </span>
+            <span id="spnSignUp">
+              <a _href="index.html" class="btn-main btn-special" id="btnSignUp" onclick="cbClickSignUp()" 
+                title="Request a free Account">Sign up</a>
+                | Sign up <i class="fa-solid fa-turn-down"></i> 
+            </span>
       </div>
     </div>
 
@@ -37,57 +198,58 @@
         <h3>Account Application</h3>
 
         <form action="https://valerie-barraud.github.io/a/apply.php" method="post" class="form-container">
-
             <div class="form-item">
                 <label for="name" id="touch_down">Nom</label>
-              </div>
-              <div class="form-item">
-                <input type="text" name="name" id="name" placeholder="Enter your Name" required />
+            </div>
+            <div class="form-item">
+                <input type="text" name="name" id="name" placeholder="First Name" required />
             </div>
 
             <div class="form-item">
                 <label for="email" id="touch_down">Login</label>
             </div>
             <div class="form-item">
-                <input type="email" name="email" id="email" placeholder="Entre your Email" required />
+                <input type="email" name="email" id="email" placeholder="Login by Email" required />
             </div>
 
             <div class="form-item" _hidden>
                 <input type="submit" value="Apply" class="btn-main btn-form" id="touch_down" />
             </div>
-
         </form>
+
+        <!--form id="myForm" _action="comment.php" method="post"--><div id="requestDIV">
+            Nom   <input type="text"  name="name"  id="nameR" /> 
+            Login <input type="email" name="email" id="emailR"/> 
+                  <input type="submit" onclick="request()" value="TEST request()" /> 
+        <!--/form--></div>
 
       </div>
     </div>
 
-    <form action="https://valerie-barraud.github.io/a/apply.php" method="post"  class="flexbox-grid">
-
+    <form id="user_profile_form" _action="request.php" _action="saveprofilechanges.php" method="post" class="flexbox-grid">
         <div class="flexbox" >
           <div class="form-item">
-            <label for="name" id="touch_down">Nom</label>
-            <input type="text" name="name" id="name" placeholder="Enter your Name" required />
+            <label              for="name" id="touch_down">Nom *</label>
+            <input type="text" name="name" id="name" placeholder="Last Name" required />
           </div>
         </div>
-
         <div class="flexbox" >
           <div class="form-item">
-            <label for="email" id="touch_down">Login</label>
-            <input type="email" name="email" id="email" placeholder="Entre your Email" required />
+            <label               for="email" id="touch_down">Login *</label>
+            <input type="email" name="email" id="email" placeholder="Login by Email" required />
           </div>
         </div>
-
         <div class="flexbox" _hidden>
           <div class="form-item">
-            <input type="submit" value="Apply" class="btn-main btn-form" id="touch_down" />
+            <input type="submit" value="form_action" class="btn-main btn-form" _id="touch_down" id="submit" />
+            <input type="submit" value="cb_onClick" _onclick="request()" onclick="sendRequest()" class="btn-main btn-form" _id="touch_down" id="submit" />
           </div>
         </div>
-
     </form>
 
     <div class="flexbox-grid">
-      <div class="flexbox map-item"> <!-- class="can-flex-grow" is added to allow the grow of an <iframe ...> map --> 
-        <iframe    _style="flex-grow: 1;" class="can-flex-grow" 
+      <div class="flexbox map-item"> <!-- class="growthable" is added to allow the grow of an <iframe ...> map --> 
+        <iframe    _style="flex-grow: 1;" class="growthable" 
           id="inlineFrameMap"
           title="Inline Frame Map"
           width ="700"
@@ -109,7 +271,7 @@
               <i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
           </li>
           <li>
-            <a href="https://github.com/" target="_blank">
+            <a href="https://github.com/valerie-barraud" target="_blank">
               <i class="fa-brands fa-square-github" aria-hidden="true"></i></a>
           </li>
         </ul>
