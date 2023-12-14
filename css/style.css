@@ -35,16 +35,17 @@ h1,h2,h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
-h1 {
+  h1 {
     color: red;
     font-size: 40px;
     font-weight:500;
-}
-h2 {
+    font-family: 'Andalé Mono', monospace; /*TEST*/
+  }
+  h2 {
     /*color: rgb(96, 96, 96);*/
     font-size: 32px;
-}
-h3 {
+  }
+  h3 {
     font-size: 22px;
     font-weight: 300;
 }
@@ -59,6 +60,66 @@ a {
   }
   a:hover {
     color: orangered;
+    cursor: default; /*TEST on buttons */
+}
+
+/** For the input type="password" and its Eye Oeil **/
+    /* former password.css - BEGIN */
+/* Le <input type="password"> est dans un <label>...</label> */
+label {
+    position: relative;
+}
+label input {
+    _font-size: 1em;
+    _color: #f9f9f9;
+    _background: transparent;
+    _padding: 1rem 1.2rem;
+    _width: 350px;
+    _border-radius: 5px;
+    _border: 2px solid #7a7a7a;
+    _transition: all 0.2s;
+  }
+  label input:focus {
+    _border-color: #ff4754;
+}
+/* Pour l'icon Eye Oeil de l'<input type="password"> */
+label .password-icon {
+    _display: flex; display: inline-flex; 
+    align-items: center;
+
+    position: absolute; /*positionné par rapport à son parent le plus proche*/
+    _top: 50%; _right: 20px;
+
+    _position: relative; /*décalé par rapport à sa position initiale grâce aux propriétés top, left, bottom et right*/
+    top: 22px; right: 22px;
+
+    _transform: translateY(-50%);
+    width: 20px;
+    color: #f9f9f9;
+    transition: all 0.2s;
+
+    padding-right: 0px;
+  }
+  label .password-icon:hover {
+    cursor: pointer;
+    color: #ff4754;
+  }
+  label .password-icon .feather-eye-off {
+    display: none;
+}
+    /* former password.css - END */
+input {
+    font-size:1em;
+    color:white; /*#f9f9f9;*/
+    background: rgba(16,16,16,0.5);/*transparent;*/
+    padding: 1rem 1rem;
+    _width: 200px;
+    border-radius: 7px;
+    border: 0px solid #7a7a7a;
+    transition: all 0.2s;
+  }
+  input:focus {
+    _border-color: #ff4754;
 }
 
 #introduction p { /* <p class="" id="introduction"> */
@@ -67,66 +128,47 @@ a {
 
 /*** Design by CSS Classes ***/
 
-.container {
+.text-justify { /* class="text-justify" */
+  text-align: justify;
+}
+
+.container {          /* see @media */
     width:900px;      /*700px */
     margin:20px auto; /* 40px auto */
-  }
-  @media (max-width:960px) {
-    .container {
-      width:700px;
-    }
-  }
-  @media (max-width:720px) {
-    .container {
-      width:500px;
-    }
-  }
-  @media (max-width:540px) {
-    .container {
-      width:300px;
-    }
-  }
+}
 
-.text-justify { /* class="text-justify" */
-    text-align: justify;
+/*iframe.growthable { */  /* for the map displayed in an iframe */
+.growthable {             /* for any markup */
+  flex-grow: 1; /* This allows the grow of the <iframe  class="growthable"> map </iframe>  */
 }
 
 /** map display **/
- iframe.can-flex-grow {
-    flex-grow: 1; /* This allows the grow of the <iframe  class="can-flex-grow"> map </iframe>  */
- }
 
 div.map-item {
-    max-width: 1300px;
-    max-height:300px;
-  }
-  @media (max-width:1260px) {
-    div.map-item {
-      width:1000px;
-    }
-  }
-  @media (max-width:960px) {
-    div.map-item {
-      width:650px;
-    }
-  }
-  @media (max-width:720px) {
-    div.map-item {
-      width:450px;
-    }
-  }
-  @media (max-width:540px) {
-    div.map-item {
-      width:300px;
-    }
+  max-width: 1300px;
+  max-height:300px;
+}
+
+/** @media screen and (max-width:...px) **/
+
+@media (max-width:1260px) {
+  div.map-item  {  width:1000px; }
+}
+@media (max-width:960px)  {
+  .container    {  width:700px;  }
+  div.map-item  {  width:650px;  }
+}
+@media (max-width:720px)  {
+  .container    {  width:500px;  }
+  div.map-item  {  width:450px;  }
+}
+@media (max-width:540px)  {
+  .container    {  width:300px;  }
+  div.map-item  {  width:300px;  }
 }
 
 /*** Design adjustments using id ***/
 
-#shadowed {        /* id="shadowed" */
+#shadowed {        /* id="shadowed" - UNUSED */
     box-shadow: 0px 10px 10px rgba(0,0,0,0.5); /* horizontal-shift vertical-shift blur color */
-}
-
-#growthable {     /* id="growthable" - UNUSED */
-    flex-grow: 1;                    /* allow the growth of a flexible element */
 }
