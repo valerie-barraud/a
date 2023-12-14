@@ -82,7 +82,14 @@ label input {
   label input:focus {
     _border-color: #ff4754;
 }
-/* Pour l'icon Eye Oeil de l'<input type="password"> */
+
+/** Oeil Eye icon to show/hide password **/
+/* LABEL <label class="password-icon"> */
+label.password-icon { 
+  padding: 0px;
+}
+/* The Oeil Eye icon to show/hide password is in <label><div class="password-icon"> Eye icon </div></label> */
+/* DESCENDANTS OF LABEL <label> ... <element class="password-icon"> */
 label .password-icon {
     _display: flex; display: inline-flex; 
     align-items: center;
@@ -97,8 +104,6 @@ label .password-icon {
     width: 20px;
     color: #f9f9f9;
     transition: all 0.2s;
-
-    padding-right: 0px;
   }
   label .password-icon:hover {
     cursor: pointer;
