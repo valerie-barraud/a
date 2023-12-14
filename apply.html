@@ -27,7 +27,7 @@
         var myGlobalResponse = ""
         // wait for the DOM to be loaded 
         //$(document).ready(function() { 
-          document.ready(function() { 
+        if (document.readyState === 'ready') { 
             // bind 'myForm' and provide a simple callback function 
             //$('#myForm').ajaxForm(function() { alert("Thank you for your comment!"); }); 
             
@@ -59,7 +59,7 @@
             eyeOn.style.display  = "block"; eyeOff.style.display = "none"; pwdField.type = "password";
           });
 
-        }); 
+        }; 
 
         function _setVisible(selector_p) 
         { // Check every 100 ms that the DOM of the document is completly loaded
